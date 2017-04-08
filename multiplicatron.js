@@ -2,7 +2,7 @@ const product = function(num, num2){
   return num * num2;
 }
 
-modules.export = product;
+module.exports = product;
 
 
 
