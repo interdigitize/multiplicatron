@@ -1,9 +1,14 @@
 const product = require('./multiplicatron.js');
 
-console.log(product(5,4));
 class ViewManager {
   connectEventHandlers(){
     document.getElementById('form-numbers').addEventListener('submit', this.onSubmit.bind(this));
+    document.getElementById('new-factor').addEventListener('click', this.addInput);
+  }
+
+  addInput(){
+    let field = document.getElementById('inputs');
+    field.insertAdjacentHTML('beforeend', '<div><input id="input-num2" class="input" type="text" size="3"></div>');
   }
 
   onSubmit(event){

@@ -4,7 +4,7 @@
   text-align: center;
 }
 
-#form-numbers > div {
+#form-numbers > div > div {
   padding: 10px 20px;
 }
 
@@ -15,7 +15,12 @@
 }
 
 #calculate {
-  font-size: 24px;
+  font-size: 22px;
+  margin-top: 50px;
+}
+
+#new-factor {
+  font-size: 22px;
   margin-top: 50px;
 }
 
