@@ -48,13 +48,13 @@ const product = require('./multiplicatron.js');
     return a === b;
   }
   testMultiplyPositiveNumbers(){
-    return this.assertEquals(product(7, 2), 14);
+    return this.assertEquals(product([7, 2]), 14);
   }
   testMultiplyNegativeNumbers(){
-    return this.assertEquals(product(-7, -2), 14);
+    return this.assertEquals(product([-7, -2]), 14);
   }
   testMultiplyPositiveAndNegativeNumbers(){
-    return this.assertEquals(product(-7, 2), -14);
+    return this.assertEquals(product([-7, 2]), -14);
   }
 
 }

@@ -8,30 +8,17 @@ class ViewManager {
 
   addInput(){
     let field = document.getElementById('inputs');
-    field.insertAdjacentHTML('beforeend', '<div><input id="input-num2" class="input" type="text" size="3"></div>');
+    field.insertAdjacentHTML('beforeend', '<div><input class="input" type="text" size="3"></div>');
   }
 
   onSubmit(event){
     event.preventDefault();
-    let num1 = document.getElementById('input-num1').value;
-    let num2 = document.getElementById('input-num2').value;
-    // let inputValuesArr = [];
-    //
-    // for(var i=0; i<3; i++) { // I need to change the three to a varible
-    //   var temp = document.getElementById('input-num' + i).value;
-    //   console.log(temp);
-    //   inputValuesArr.push(temp);
-    // }
-//TO DO
-    // when the new btn is clicked, add a new field to the DOM
-    // pull all field values into and array
-    // reduce the arr and append the product to the page
-
-
-    const answer = product(num1, num2); //inputValuesArr.reduce(function(pre, cur){
-    //   return parseInt(pre, 10) * parseInt(cur, 10);
-    // });
-
+    let values = document.querySelectorAll('.input'); // Is there a better way to select the values?
+    let inputValuesArr = [];
+    values.forEach(function(el){
+        inputValuesArr.push(el.value);
+    });
+    var answer = product(inputValuesArr);
     this.renderProduct(answer);
   }
 
@@ -39,6 +26,7 @@ class ViewManager {
     document.getElementById('product').textContent = answer;
   }
 }
+console.log(product([]))
 
 const viewManager = new ViewManager();
 viewManager.connectEventHandlers();

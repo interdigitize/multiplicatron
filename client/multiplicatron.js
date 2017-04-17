@@ -1,7 +1,14 @@
-const product = function(num, num2){
-  // if(isNaN(num) || isNaN(num2)){
-  //   return NaN + '\n' + "Please enter a number.";
-  // }
-  return num * num2;
+const product = function(arr){
+  if(arr.length <= 1 ){//|| isNaN(arr[0]) || isNaN(arr[1])
+    return NaN;
+  }
+  return arr.reduce(function(pre, cur){
+    if(cur.length < 1){
+      return NaN;
+    }
+    return pre * cur;
+  });
 }
+
+
 module.exports = product;
