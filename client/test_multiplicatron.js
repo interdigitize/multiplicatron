@@ -47,18 +47,31 @@ const product = require('./multiplicatron.js');
   assertEquals(a, b){
     return a === b;
   }
-  testMultiplyPositiveNumbers(){
+  testMultiplyThreePositiveNumbers(){
+    return this.assertEquals(product([3, 5, 1]), 15);
+  }
+  testMultiplyThreeNegativeNumbers(){
+    return this.assertEquals(product([-7, -2, -1]), -14);
+  }
+  testMultiplyTwoPositiveNumbers(){
     return this.assertEquals(product([7, 2]), 14);
   }
-  testMultiplyNegativeNumbers(){
+  testMultiplyTwoNegativeNumbers(){
     return this.assertEquals(product([-7, -2]), 14);
   }
-  testMultiplyPositiveAndNegativeNumbers(){
+  testMultiplyAPositiveAndNegativeNumber(){
     return this.assertEquals(product([-7, 2]), -14);
   }
-
+  testMultiplyOnePositiveNumber(){
+    return isNaN(product([1]));
+  }
+  testMultiplyOneNegativeNumber(){
+    return isNaN(product([-1]));
+  }
+  testMultiplyAString(){
+    return isNaN(product("hi"));
+  }
 }
 
 const testSuite = new TestSuite();
-//Don't forget the invocation opperators!!!
-testSuite.runTests();
+testSuite.runTests(); //Don't forget the invocation opperators!!!
