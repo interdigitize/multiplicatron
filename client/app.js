@@ -26,7 +26,6 @@ class ViewManager {
     document.getElementById('product').textContent = answer;
   }
 }
-console.log(product([]))
 
 const viewManager = new ViewManager();
 viewManager.connectEventHandlers();
